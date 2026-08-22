@@ -3,308 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mateus Henrique | Desenvolvedor Front End</title>
+    <title>Mateus Henrique — Creative Developer Portfolio</title>
+    <meta name="description" content="Portfólio criativo de Mateus Henrique, desenvolvedor front-end especialista em React, JavaScript, PHP e Laravel.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- ===================== LOADER ===================== -->
     <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
-            <div class="loader-text">Carregando...</div>
+        <div class="loader-inner">
+            <div class="loader-circle">
+                <!-- Dashed decorative ring -->
+                <svg viewBox="0 0 100 100" class="dashed-ring">
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 6" class="text-muted"></circle>
+                </svg>
+                <!-- Progress ring -->
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" class="progress-track"></circle>
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.5" class="progress-ring" style="color: #fafafa;"></circle>
+                </svg>
+                <span class="loader-mark">M.</span>
+            </div>
         </div>
     </div>
 
-
-    <div class="cursor" id="cursor"></div>
+    <!-- ===================== CUSTOM CURSOR ===================== -->
+    <div class="cursor-ring" id="cursor-ring"></div>
     <div class="cursor-dot" id="cursor-dot"></div>
 
+    <!-- ===================== SCROLL PROGRESS BAR ===================== -->
+    <div class="scroll-progress" id="scroll-progress"></div>
 
-    <canvas id="particles-canvas"></canvas>
+    <!-- ===================== HEADER ===================== -->
+    <header id="header">
+        <div class="header-backdrop"></div>
+        <nav class="header-nav">
+            <a href="#home" class="logo">mateus</a>
 
-    <nav>
-        <div class="logo">&lt;Dev /&gt;</div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#hero">Inicio</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#experience">Experiencia</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#stack">Stack</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#roadmap">Trajetória</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
 
+                <div class="nav-right">
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/mateus5596" target="_blank" class="nav-icon-btn" title="GitHub">
+                        <div class="shine"><div class="shine-bar"></div></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/mateus-henrique-b-rosa-10035535b/" target="_blank" class="nav-icon-btn" title="LinkedIn">
+                        <div class="shine"><div class="shine-bar"></div></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
 
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <span class="hero-badge">Disponivel para projetos</span>
-            <h1>Ola, eu sou <span class="gradient-text">Mateus Henrique</span></h1>
-            <h2>Desenvolvedor Front End</h2>
-            <p>Especialista em criar interfaces modernas, responsivas e intuitivas. Apaixonado por transformar designs em experiencias web incriveis com as tecnologias mais atuais.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    Contato
-                </a>
+            <!-- Mobile Toggle -->
+            <div class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
             </div>
-        </div>
+        </nav>
+    </header>
 
-        <div class="floating-logos">
-            <div class="logo-item" style="--delay: 0s">
-                <img src="img/html.png" alt="HTML">
-                <span>HTML</span>
-            </div>
-            <div class="logo-item" style="--delay: 0.2s">
-                <img src="img/css.png" alt="CSS">
-                <span>CSS</span>
-            </div>
-            <div class="logo-item" style="--delay: 0.4s">
-                <img src="img/react.png" alt="React">
-                <span>React</span>
-            </div>
-            <div class="logo-item" style="--delay: 0.6s">
-                <img src="img/js.png" alt="JavaScript">
-                <span>JavaScript</span>
-            </div>
-            <div class="logo-item" style="--delay: 0.8s">
-                <img src="img/laravel.png" alt="Laravel">
-                <span>Laravel</span>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-        </div>
-    </section>
+    <!-- ===================== MOBILE MENU ===================== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#stack">Stack</a>
+        <a href="#projects">Projetos</a>
+        <a href="#roadmap">Trajetória</a>
+        <a href="#contact">Contato</a>
+    </div>
 
-    <section class="about" id="about">
-        <div class="section-header reveal">
-            <h2>Sobre Mim</h2>
-            <p>Conheca um pouco mais sobre minha trajetoria</p>
-            <div class="section-line"></div>
-        </div>
-        <div class="about-content">
-            <div class="about-image reveal">
-                <div class="about-image-wrapper">
-                    <img src="img/perfil.jpeg" alt="Foto de perfil">
-                </div>
-            </div>
-            <div class="about-text reveal">
-                <h3>Desenvolvedor Apaixonado por Tecnologia</h3>
-                <p>Sou um desenvolvedor de software dedicado, com experiencia em criar aplicacoes web modernas. Minha jornada na programacao comecou por curiosidade e se transformou em uma paixao por resolver problemas complexos atraves do codigo.</p>
-                <p>Busco constantemente aprender novas tecnologias e aprimorar minhas habilidades, sempre focado em entregar solucoes de alta qualidade que fazem a diferenca.</p>
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                        <span>Desenvolvimento de Software</span>
-                    </div>
-                    <div class="highlight-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        <span>Seguranca</span>
-                    </div>
-                    <div class="highlight-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-                        <span>Tecnologia</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ===================== MAIN ===================== -->
+    <main>
 
-    <section class="skills" id="skills">
-        <div class="section-header reveal">
-            <h2>Habilidades</h2>
-            <p>Tecnologias e ferramentas que domino</p>
-            <div class="section-line"></div>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-category reveal">
-                <h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                    Linguagens de Programacao
-                </h3>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Laravel</span>
-                        <span class="skill-percent">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">JavaScript</span>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="home">
+            <!-- Background Image Columns -->
+            <div class="hero-image-columns">
+                <div class="hero-col">
+                    <div class="hero-col-inner">
+                        <div class="hero-col-img"><img src="img/hero_1.jpg" alt="Portrait"></div>
+                        <div class="hero-col-img"><img src="img/hero_2.jpg" alt="Code"></div>
+                        <div class="hero-col-img"><img src="img/hero_3.jpg" alt="Workspace"></div>
+                        <div class="hero-col-img"><img src="img/perfil.jpeg" alt="Mateus"></div>
+                        <div class="hero-col-img"><img src="img/project_paroquia.png" alt="Project"></div>
+                        <div class="hero-col-img"><img src="img/project_dashboard.png" alt="Project"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="hero-col-img"><img src="img/hero_1.jpg" alt="Portrait"></div>
+                        <div class="hero-col-img"><img src="img/hero_2.jpg" alt="Code"></div>
+                        <div class="hero-col-img"><img src="img/hero_3.jpg" alt="Workspace"></div>
+                        <div class="hero-col-img"><img src="img/perfil.jpeg" alt="Mateus"></div>
+                        <div class="hero-col-img"><img src="img/project_paroquia.png" alt="Project"></div>
+                        <div class="hero-col-img"><img src="img/project_dashboard.png" alt="Project"></div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Python</span>
-                        <span class="skill-percent">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">React</span>
-                        <span class="skill-percent">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">HTML / CSS</span>
-                        <span class="skill-percent">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
+                <div class="hero-col">
+                    <div class="hero-col-inner">
+                        <div class="hero-col-img"><img src="img/project_techstore.png" alt="Project"></div>
+                        <div class="hero-col-img"><img src="img/hero_3.jpg" alt="Workspace"></div>
+                        <div class="hero-col-img"><img src="img/perfil.jpeg" alt="Mateus"></div>
+                        <div class="hero-col-img"><img src="img/hero_1.jpg" alt="Portrait"></div>
+                        <div class="hero-col-img"><img src="img/hero_2.jpg" alt="Code"></div>
+                        <div class="hero-col-img"><img src="img/project_paroquia.png" alt="Project"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="hero-col-img"><img src="img/project_techstore.png" alt="Project"></div>
+                        <div class="hero-col-img"><img src="img/hero_3.jpg" alt="Workspace"></div>
+                        <div class="hero-col-img"><img src="img/perfil.jpeg" alt="Mateus"></div>
+                        <div class="hero-col-img"><img src="img/hero_1.jpg" alt="Portrait"></div>
+                        <div class="hero-col-img"><img src="img/hero_2.jpg" alt="Code"></div>
+                        <div class="hero-col-img"><img src="img/project_paroquia.png" alt="Project"></div>
                     </div>
                 </div>
             </div>
-            <div class="skill-category reveal">
-                <h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                    Ferramentas e Tecnologias
-                </h3>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Git / GitHub</span>
-                        <span class="skill-percent">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">APIs REST</span>
-                        <span class="skill-percent">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Banco de Dados</span>
-                        <span class="skill-percent">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">VS Code</span>
-                        <span class="skill-percent">95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="95"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
+            <!-- Gradient overlays -->
+            <div class="hero-gradient-top"></div>
+            <div class="hero-gradient-left"></div>
 
-    <section class="experience" id="experience">
-        <div class="section-header reveal">
-            <h2>Experiencia</h2>
-            <p>Minha trajetoria de estudos e desenvolvimento</p>
-            <div class="section-line"></div>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">2025</span>
-                    <h3>Estagio Prefeitura</h3>
-                    <p>Desenvolvimento de aplicacoes web para prefeituras e orgs municipais, focando em solucoes personalizadas e de alta qualidade.</p>
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <!-- Top: Decorative + Scroll Indicator -->
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; width:100%;">
+                    <div class="hero-deco">////</div>
+                    <div class="scroll-indicator">
+                        <div class="line"></div>
+                        <span>Scroll</span>
+                    </div>
                 </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">2023 - 2024</span>
-                    <h3>Estudos em Desenvolvimento Web</h3>
-                    <p>Especializacao em desenvolvimento Web PHP, criando Sistemas nativos e consumindo APIs.</p>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">2022 - 2023</span>
-                    <h3>Cursos de Programacao</h3>
-                    <p>Conclusao de diversos cursos em JavaScript, Python e tecnologias web modernas.</p>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-content">
-                    <span class="timeline-date">2021 - 2022</span>
-                    <h3>Inicio na Programacao</h3>
-                    <p>Primeiros passos no mundo da programacao, aprendendo logica e fundamentos atraves de projetos praticos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="contact" id="contact">
-        <div class="section-header reveal">
-            <h2>Contato</h2>
-            <p>Vamos trabalhar juntos?</p>
-            <div class="section-line"></div>
-        </div>
-        <div class="contact-content">
-            <div class="contact-methods reveal">
-                <a href="https://wa.me/5543991409458?text=Oi!%20Gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" class="method-btn whatsapp" title="WhatsApp">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                    <span>WhatsApp</span>
-                </a>
-                <a href="mailto:themateusbr007@gmail.com" class="method-btn email" title="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                    <span>Email</span>
-                </a>
-                <a href="https://github.com/mateus5596" target="_blank" class="method-btn github" title="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/mateus-henrique-b-rosa-10035535b/?trk=opento_sprofile_topcard" target="_blank" class="method-btn linkedin" title="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-        </div>
-    </section>
+                <!-- Big Title -->
+                <div style="margin-top:auto;">
+                    <div class="hero-title-wrap">
+                        <h1 class="hero-title">
+                            Mateus<br>
+                            <span class="sub">Henrique</span>
+                        </h1>
+                    </div>
+                </div>
 
+                <!-- Description + CTAs -->
+                <div style="display:flex; flex-direction:column; gap:1.5rem;">
+                    <p class="hero-description">
+                        Sou alguém que ama <span class="highlight">aprender coisas novas</span> e constantemente coloco em prática o que aprendo. Desenvolvo aplicações <span class="italic">web</span> e <span class="italic">desktop</span>. Trabalho com ferramentas simples, <span class="highlight">práticas</span> e <span class="highlight">sustentáveis</span>.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-pill">
+                            <div class="btn-shine"><div class="btn-shine-bar"></div></div>
+                            <span>
+                                Fale Comigo
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </span>
+                        </a>
+                        <a href="#projects" class="btn-ghost">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="7"></rect><path d="M12 6v4"></path></svg>
+                                Ver Projetos
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== MAIN CONTENT (z-index above hero) ========== -->
+        <div class="main-content">
+
+            <!-- ========== ABOUT [001] ========== -->
+            <section class="about-section" id="about">
+                <div class="about-container">
+                    <!-- Sidebar -->
+                    <div class="about-sidebar">
+                        <div class="about-sidebar-inner">
+                            <div class="reveal">
+                                <span class="section-counter">[001]</span>
+                            </div>
+                            <div class="reveal reveal-delay-1">
+                                <h2 class="section-title">Sobre</h2>
+                            </div>
+                            <div class="reveal reveal-delay-2">
+                                <div class="profile-badge">
+                                    <div class="badge-line">
+                                        <div class="badge-line-inner"></div>
+                                        <div class="badge-dot-outer">
+                                            <div class="badge-dot-inner"></div>
+                                        </div>
+                                    </div>
+                                    <div class="badge-card">
+                                        <div class="badge-pin"></div>
+                                        <div class="badge-avatar">
+                                            <img src="img/perfil.jpeg" alt="Mateus Henrique">
+                                        </div>
+                                        <div class="badge-info">
+                                            <span class="badge-name">MATEUS</span>
+                                            <span class="badge-role">Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="about-content">
+                        <div class="reveal">
+                            <h3 class="about-headline">
+                                Sou um <span class="italic">Desenvolvedor Full Stack</span> focado em construir <span class="bold">sistemas limpos e sustentáveis</span>.
+                            </h3>
+                        </div>
+                        <div class="reveal reveal-delay-1">
+                            <p class="about-text">
+                                Sou alguém que ama <span class="highlight">aprender coisas novas</span> e constantemente coloca em prática o que aprende. Desenvolvo aplicações <span class="italic">web</span> e <span class="italic">desktop</span>. Trabalho com ferramentas simples, <span class="highlight">práticas</span> e <span class="highlight">sustentáveis</span>. Com experiência em sistemas governamentais e aplicações comunitárias, foco na entrega de software performático e bem documentado.
+                            </p>
+                        </div>
+                        <div class="reveal reveal-delay-2">
+                            <a href="https://github.com/mateus5596" target="_blank" class="about-link">
+                                <span class="about-link-text">Ver GitHub Completo</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== MARQUEE 1 ========== -->
+            <div class="marquee-section">
+                <div class="marquee-fade-left"></div>
+                <div class="marquee-fade-right"></div>
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span class="marquee-word">CÓDIGO LIMPO</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">MINIMALISMO INTENCIONAL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">INTEGRIDADE ARQUITETURAL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">PERFORMANCE SEM COMPROMISSO</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">VISÃO ESCALÁVEL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">DESIGN RESPONSIVO</span><div class="marquee-dot"></div>
+                    </div>
+                    <div class="marquee-content" aria-hidden="true">
+                        <span class="marquee-word">CÓDIGO LIMPO</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">MINIMALISMO INTENCIONAL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">INTEGRIDADE ARQUITETURAL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">PERFORMANCE SEM COMPROMISSO</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">VISÃO ESCALÁVEL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">DESIGN RESPONSIVO</span><div class="marquee-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== STACK [002] ========== -->
+            <section class="stack-section" id="stack">
+                <div class="stack-container">
+                    <div class="stack-header">
+                        <div class="reveal">
+                            <span class="section-counter">[002]</span>
+                        </div>
+                        <div class="reveal reveal-delay-1">
+                            <h2 class="section-title">Stack</h2>
+                        </div>
+                    </div>
+
+                    <div class="stack-categories">
+                        <!-- Frontend -->
+                        <div class="reveal">
+                            <div class="stack-category-header">
+                                <span class="stack-category-num">01</span>
+                                <h3 class="stack-category-title">Frontend Technologies</h3>
+                            </div>
+                            <div class="stack-items">
+                                <div class="stack-item">
+                                    <div class="stack-item-icon"><img src="img/react.png" alt="React"></div>
+                                    <span class="stack-item-name">React.js</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon"><img src="img/js.png" alt="JavaScript"></div>
+                                    <span class="stack-item-name">JavaScript</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon"><img src="img/html.png" alt="HTML5"></div>
+                                    <span class="stack-item-name">HTML5</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon"><img src="img/css.png" alt="CSS3"></div>
+                                    <span class="stack-item-name">CSS3</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                    </div>
+                                    <span class="stack-item-name">UI/UX & Responsividade</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="reveal">
+                            <div class="stack-category-header">
+                                <span class="stack-category-num">02</span>
+                                <h3 class="stack-category-title">Backend & Languages</h3>
+                            </div>
+                            <div class="stack-items">
+                                <div class="stack-item">
+                                    <div class="stack-item-icon"><img src="img/laravel.png" alt="Laravel"></div>
+                                    <span class="stack-item-name">Laravel</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                    </div>
+                                    <span class="stack-item-name">PHP Nativo</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                                    </div>
+                                    <span class="stack-item-name">APIs RESTful</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                                    </div>
+                                    <span class="stack-item-name">Python</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Database & Tools -->
+                        <div class="reveal">
+                            <div class="stack-category-header">
+                                <span class="stack-category-num">03</span>
+                                <h3 class="stack-category-title">Database & Tools</h3>
+                            </div>
+                            <div class="stack-items">
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+                                    </div>
+                                    <span class="stack-item-name">MySQL & SQL</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6"></path><path d="m17.2 3.8-4.2 4.2"></path><path d="M23 12h-6"></path><path d="m20.2 17.2-4.2-4.2"></path><path d="M12 23v-6"></path><path d="m6.8 20.2 4.2-4.2"></path><path d="M1 12h6"></path><path d="m3.8 6.8 4.2 4.2"></path></svg>
+                                    </div>
+                                    <span class="stack-item-name">Git & GitHub</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"></path></svg>
+                                    </div>
+                                    <span class="stack-item-name">VS Code</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+                                    </div>
+                                    <span class="stack-item-name">Clean Code</span>
+                                </div>
+                                <div class="stack-item">
+                                    <div class="stack-item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                                    </div>
+                                    <span class="stack-item-name">Otimização SEO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== MARQUEE 2 (reverse) ========== -->
+            <div class="marquee-section reverse">
+                <div class="marquee-fade-left"></div>
+                <div class="marquee-fade-right"></div>
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span class="marquee-word">TRANSPARÊNCIA RADICAL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">PENSAMENTO FIRST PRINCIPLES</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">ENGENHARIA FRONT-END</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">SOLUÇÕES ESCALÁVEIS</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">EXPERIÊNCIA DO USUÁRIO</span><div class="marquee-dot"></div>
+                    </div>
+                    <div class="marquee-content" aria-hidden="true">
+                        <span class="marquee-word">TRANSPARÊNCIA RADICAL</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">PENSAMENTO FIRST PRINCIPLES</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">ENGENHARIA FRONT-END</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">SOLUÇÕES ESCALÁVEIS</span><div class="marquee-dot"></div>
+                        <span class="marquee-word">EXPERIÊNCIA DO USUÁRIO</span><div class="marquee-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== PROJECTS [003] ========== -->
+            <section class="projects-section" id="projects">
+                <div class="projects-container">
+                    <div class="projects-header">
+                        <div class="reveal">
+                            <span class="section-counter">[003]</span>
+                        </div>
+                        <div class="reveal reveal-delay-1">
+                            <h2 class="section-title">Projetos</h2>
+                        </div>
+                        <div class="reveal reveal-delay-2">
+                            <p class="section-description">Alguns dos trabalhos que desenvolvi, desde plataformas comunitárias até dashboards analíticos.</p>
+                        </div>
+                    </div>
+
+                    <div class="projects-scroll">
+                        <div class="projects-scroll-track">
+                            <!-- Project 1 -->
+                            <div class="project-card-v2 group reveal">
+                                <div class="project-card-inner">
+                                    <div class="project-image-wrapper">
+                                        <img src="img/project_paroquia.png" alt="Paróquia São José" loading="lazy">
+                                        <div class="project-overlay-gradient"></div>
+                                    </div>
+                                    <div class="project-info-overlay">
+                                        <div class="project-meta-top">
+                                            <span>Full-Stack Application</span>
+                                            <span>2025</span>
+                                        </div>
+                                        <h3 class="project-title-large">Paróquia São José</h3>
+                                    </div>
+                                </div>
+                                <a href="https://paroquiasaojose.vercel.app" target="_blank" class="project-link-full" aria-label="Ver projeto Paróquia São José"></a>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="project-card-v2 group reveal reveal-delay-1">
+                                <div class="project-card-inner">
+                                    <div class="project-image-wrapper">
+                                        <img src="img/project_dashboard.png" alt="Dashboard de Gestão Pública" loading="lazy">
+                                        <div class="project-overlay-gradient"></div>
+                                    </div>
+                                    <div class="project-info-overlay">
+                                        <div class="project-meta-top">
+                                            <span>Public Sector Analytics</span>
+                                            <span>2025</span>
+                                        </div>
+                                        <h3 class="project-title-large">Dashboard Público</h3>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/mateus5596" target="_blank" class="project-link-full" aria-label="Ver projeto Dashboard"></a>
+                            </div>
+
+                            <!-- Project 3 -->
+                            <div class="project-card-v2 group reveal reveal-delay-2">
+                                <div class="project-card-inner">
+                                    <div class="project-image-wrapper">
+                                        <img src="img/project_techstore.png" alt="TechStore E-Commerce UI" loading="lazy">
+                                        <div class="project-overlay-gradient"></div>
+                                    </div>
+                                    <div class="project-info-overlay">
+                                        <div class="project-meta-top">
+                                            <span>E-Commerce Front-End</span>
+                                            <span>2024</span>
+                                        </div>
+                                        <h3 class="project-title-large">TechStore</h3>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/mateus5596" target="_blank" class="project-link-full" aria-label="Ver projeto TechStore"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== ROADMAP [004] ========== -->
+            <section class="roadmap-section" id="roadmap">
+                <div class="roadmap-container">
+                    <div class="roadmap-header">
+                        <div class="reveal">
+                            <span class="section-counter">[004]</span>
+                        </div>
+                        <div class="reveal reveal-delay-1">
+                            <h2 class="section-title">Trajetória</h2>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-list">
+                        <div class="roadmap-item reveal">
+                            <div class="roadmap-dot"></div>
+                            <span class="roadmap-period">2025 — Presente</span>
+                            <h3 class="roadmap-role">Estagiário em TI & Desenvolvimento Web</h3>
+                            <div class="roadmap-company">Prefeitura Municipal</div>
+                            <p class="roadmap-desc">Desenvolvimento e manutenção de páginas web oficiais, melhoria de acessibilidade e criação de ferramentas web internas para secretarias municipais.</p>
+                        </div>
+
+                        <div class="roadmap-item reveal">
+                            <div class="roadmap-dot"></div>
+                            <span class="roadmap-period">2023 — 2024</span>
+                            <h3 class="roadmap-role">Especialização em PHP & Backend Laravel</h3>
+                            <div class="roadmap-company">Desenvolvimento Autônomo</div>
+                            <p class="roadmap-desc">Construção de aplicações PHP estruturadas em arquitetura MVC, gerenciamento de banco de dados e criação de endpoints RESTful.</p>
+                        </div>
+
+                        <div class="roadmap-item reveal">
+                            <div class="roadmap-dot"></div>
+                            <span class="roadmap-period">2022 — 2023</span>
+                            <h3 class="roadmap-role">Estudos Avançados em Front-End & React</h3>
+                            <div class="roadmap-company">Formação Intensiva</div>
+                            <p class="roadmap-desc">Estudo aprofundado em manipulação do DOM, ecossistema React, componentes reutilizáveis e estilização moderna.</p>
+                        </div>
+
+                        <div class="roadmap-item reveal">
+                            <div class="roadmap-dot"></div>
+                            <span class="roadmap-period">2021 — 2022</span>
+                            <h3 class="roadmap-role">Fundamentos da Computação & Programação</h3>
+                            <div class="roadmap-company">Primeiros Passos</div>
+                            <p class="roadmap-desc">Aprendizado em lógica de programação, sintaxe básica em Python e criação das primeiras estruturas estáticas em HTML5 e CSS3.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== CONTACT [005] ========== -->
+            <section class="contact-section" id="contact">
+                <div class="contact-container">
+                    <div class="contact-header">
+                        <div class="reveal">
+                            <span class="section-counter">[005]</span>
+                        </div>
+                        <div class="reveal reveal-delay-1">
+                            <h2 class="section-title">Contato</h2>
+                        </div>
+                    </div>
+
+                    <div class="contact-content">
+                        <div class="contact-text reveal">
+                            <h3 class="contact-heading">Gostou do meu perfil?<br><span class="bold">Vamos conversar.</span></h3>
+                            <p class="contact-subtext">Estou aberto para novas oportunidades, projetos freelancer e colaborações em equipe. Fique à vontade para me contatar diretamente.</p>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="https://wa.me/5543991409458?text=Olá%20Mateus,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!" target="_blank" class="contact-link-card reveal">
+                                <div>
+                                    <span class="contact-link-label">WhatsApp</span>
+                                    <span class="contact-link-value">
+                                        (43) 99140-9458
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="mailto:themateusbr007@gmail.com" class="contact-link-card reveal reveal-delay-1">
+                                <div>
+                                    <span class="contact-link-label">E-mail</span>
+                                    <span class="contact-link-value">
+                                        themateusbr007@gmail.com
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/mateus5596" target="_blank" class="contact-link-card reveal reveal-delay-2">
+                                <div>
+                                    <span class="contact-link-label">GitHub</span>
+                                    <span class="contact-link-value">
+                                        github.com/mateus5596
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mateus-henrique-b-rosa-10035535b/" target="_blank" class="contact-link-card reveal reveal-delay-3">
+                                <div>
+                                    <span class="contact-link-label">LinkedIn</span>
+                                    <span class="contact-link-value">
+                                        linkedin.com/in/mateus-henrique
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- /.main-content -->
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">&lt;Dev /&gt;</div>
-            <div class="footer-social">
-                <a href="https://github.com/mateus5596" target="_blank" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">mateus</span>
+                <span class="footer-copy">&copy; 2026 Mateus Henrique. Projetado com simplicidade.</span>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://github.com/mateus5596" target="_blank" class="footer-social-link" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/mateus-henrique-b-rosa-10035535b/?trk=opento_sprofile_topcard" target="_blank" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <a href="https://www.linkedin.com/in/mateus-henrique-b-rosa-10035535b/" target="_blank" class="footer-social-link" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
-                <a href="mailto:themateusbr007@gmail.com" aria-label="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="https://wa.me/5543991409458" target="_blank" class="footer-social-link" title="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 </a>
             </div>
-            <p class="footer-copyright">2026 - Mateus Henrique. Todos os direitos reservados.</p>
+
+            <a href="#home" class="back-top" aria-label="Voltar ao topo">
+                <span>Topo</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+            </a>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
